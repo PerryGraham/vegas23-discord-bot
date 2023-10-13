@@ -46,6 +46,16 @@ class Steps(BaseModel):
         super().__init__(wager=wager, multi=multi, next_multi=next_multi)
 
 
+class RussianRoulette:
+    wager: NonNegativeInt
+    multi: float
+    bulletcount: int
+
+    def __init__(self, wager, multi: float = 1.0, bulletcount: int = 6):
+        super().__init__(wager=wager, multi=multi, bulletcount=bulletcount)
+
+
 class Games(BaseModel):
     craps: Craps
     steps: Dict[str, Steps] = {}
+    russian_roulette: Dict[str, RussianRoulette] = {}

@@ -3,5 +3,6 @@
         "point": 0,
         "bets": {}
     },
-    "steps": {}
+    "steps": {},
+    "russian_roulette": {}
 }
