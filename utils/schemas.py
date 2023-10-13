@@ -46,7 +46,7 @@ class Steps(BaseModel):
         super().__init__(wager=wager, multi=multi, next_multi=next_multi)
 
 
-class RussianRoulette:
+class RussianRoulette(BaseModel):
     wager: NonNegativeInt
     multi: float
     bulletcount: int

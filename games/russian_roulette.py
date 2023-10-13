@@ -1,6 +1,7 @@
 from discord.ext import commands
 from random import randint
 from utils import bot_utils as utils
+from typing import Optional
 from utils.schemas import RussianRoulette
 import discord
 
@@ -10,18 +11,10 @@ import discord
     description="Use !rbet to set your wager, then use !pull to pull the trigger.",
     pass_context=True,
 )
-async def rbet(ctx, wager):
+async def rbet(ctx, wager: Optional[int] = None):
     player = str(ctx.message.author.name)
     all_users = utils.get_users()
     player_data = all_users.users[player]
-
-    result = 0
-    resp = utils.verify_wager(wager, player_data)
-
-    if resp is not None:
-        await ctx.send(resp)
-        return
-    wager = int(wager)
 
     games = utils.get_games()
     russian_roulette = games.russian_roulette
@@ -44,6 +37,13 @@ async def rbet(ctx, wager):
     else:
         wager = player_session.wager
 
+    resp = utils.verify_wager(wager, player_data)
+
+    if resp is not None:
+        await ctx.send(resp)
+        return
+    wager = int(wager)
+
     num = randint(1, player_session.bulletcount)
 
     if num != 1:
@@ -63,8 +63,10 @@ async def rbet(ctx, wager):
             title="Bang.",
             color=discord.Color.red(),
         )
+        russian_roulette.pop(player)
 
     player_data.total_wagered += wager
     utils.save_users(users=all_users)
+    utils.save_games(games=games)
 
     await ctx.send(embed=embed)
