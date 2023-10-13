@@ -1,10 +1,8 @@
 import discord
-from random import randint
-from utils import craps
 from discord.ext import commands
-from roulette import bet
-import general_commands
-import steps
+from games.roulette import bet
+from utils import general_commands
+from games import steps
 
 with open("token.txt", "r") as f:
     token = f.read()

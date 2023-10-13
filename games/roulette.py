@@ -1,7 +1,7 @@
 from discord.ext import commands
 from random import randint
-import utils
-from schemas import Roulette
+from utils import bot_utils as utils
+from utils.schemas import Roulette
 
 allowed_bets = ["BLACK", "B", "RED", "R", "GREEN", "G", "ODD", "EVEN"]
 

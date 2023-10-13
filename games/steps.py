@@ -1,8 +1,8 @@
 from discord.ext import commands
 from random import randint
-import utils
+from utils import bot_utils as utils
 import discord
-from schemas import Steps
+from utils.schemas import Steps
 from typing import Optional
 
 

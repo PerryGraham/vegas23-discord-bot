@@ -1,8 +1,8 @@
 from discord.ext import commands
-import utils
+import utils.bot_utils as utils
 import time
 import discord
-from schemas import User
+from utils.schemas import User
 
 
 @commands.command(

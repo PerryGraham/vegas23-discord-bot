@@ -1,27 +1,27 @@
 import json
 import discord
-from schemas import Users, Games, User
+from utils.schemas import Users, Games, User
 
 
 def get_games() -> Games:
-    with open("games.json", "r") as f:
+    with open("db/games.json", "r") as f:
         data = json.load(f)
     return Games(**data)
 
 
 def get_users() -> Users:
-    with open("users.json", "r") as f:
+    with open("db/users.json", "r") as f:
         data = json.load(f)
     return Users(**data)
 
 
 def save_games(games: Games) -> None:
-    with open("games.json", "w") as f:
+    with open("db/games.json", "w") as f:
         json.dump(games.model_dump(), f, indent=4)
 
 
 def save_users(users: Users) -> None:
-    with open("users.json", "w") as f:
+    with open("db/users.json", "w") as f:
         json.dump(users.model_dump(), f, indent=4)
 
 
@@ -53,7 +53,7 @@ def craps(var):
 
 
 def get_roulette_image(num):
-    with open("roulette_images.json", "r") as f:
+    with open("db/roulette_images.json", "r") as f:
         data = json.load(f)
 
     return data[str(num)]

@@ -1,7 +1,7 @@
-from pydantic import BaseModel, validator
+from pydantic import BaseModel
 from typing import Dict
 from pydantic.types import NonNegativeInt
-from typing import Literal, Optional
+from typing import Literal
 
 
 class Roulette:

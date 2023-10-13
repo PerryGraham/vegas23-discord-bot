@@ -2,11 +2,11 @@
     "users": {
         "graham1": {
             "on_table": 0,
-            "at_play": 1000,
-            "profit": 4994,
+            "at_play": 0,
+            "profit": 6494,
             "daily": 1697178094.4915357,
             "daily_count": 5,
-            "total_wagered": 9031
+            "total_wagered": 9731
         },
         "apsofatl": {
             "on_table": 0,
@@ -18,10 +18,10 @@
         },
         "triz": {
             "on_table": 0,
-            "at_play": 0,
-            "profit": 1490,
-            "daily": 1696843208.8959992,
-            "daily_count": 3,
+            "at_play": 1100,
+            "profit": 390,
+            "daily": 1697178287.239734,
+            "daily_count": 4,
             "total_wagered": 3290
         },
         ".radical": {
